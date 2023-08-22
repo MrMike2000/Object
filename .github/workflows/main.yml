@@ -43,7 +43,6 @@ for (let key in user3) {
 clone.name3 = "Miguel";
 console.log(user3.name3);
 
-Object.assign(dest, ...sources)
 
 let user4 = { name4: "Mike" };
 let permissions1 = { canView: true };
