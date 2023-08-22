@@ -1,0 +1,117 @@
+//Object references and copying
+let message = "Hello!";
+let phrase = message;
+console.log(message);
+
+let user = {
+  name: "Michael"
+};
+console.log(user.name);
+
+let user0 = { name0: "Juan" };
+let admin0 = user0;
+console.log(user0.name0);
+
+let user1 = { name1: 'Miguel' };
+let admin1 = user1;
+admin1.name1 = 'Juan';
+console.log(user1.name1);
+
+let a = {};
+let b = a;
+console.log(a == b);
+console.log(a === b);
+
+let a0 = {};
+let b0 = {};
+console.log(a0 == b0);
+
+const user2 = {
+  name2: "Miguel"
+};
+user2.name2 = "Juan";
+console.log(user2.name2);
+
+let user3 = {
+  name3: "Michael",
+  age3: 23
+};
+let clone = {};
+for (let key in user3) {
+  clone[key] = user3[key];
+}
+clone.name3 = "Miguel";
+console.log(user3.name3);
+
+Object.assign(dest, ...sources)
+
+let user4 = { name4: "Mike" };
+let permissions1 = { canView: true };
+let permissions2 = { canEdit: true };
+Object.assign(user, permissions1, permissions2);
+
+console.log(user4.name4);
+console.log(user4.canView4);
+console.log(user4.canEdit4);
+
+let user5 = { name5: "Michael" };
+Object.assign(user5, { name5: "Juan" });
+console.log(user5.name5);
+
+let user6 = {
+  name6: "Mike",
+  age6: 23
+};
+
+let clone6 = Object.assign({}, user6);
+
+console.log(clone6.name6);
+console.log(clone6.age6);
+
+let user7 = {
+  name7: "Juan",
+  sizes7: {
+    height7: 182,
+    width7: 50
+  }
+};
+
+console.log( user7.sizes7.height7 );
+
+let user8 = {
+  name8: "Mike",
+  sizes8: {
+    height8: 182,
+    width8: 50
+  }
+};
+
+let clone8 = Object.assign({}, user8);
+
+console.log( user8.sizes8 === clone8.sizes8 );
+
+user8.sizes8.width8 = 60; 
+console.log(clone8.sizes8.width8);
+
+let user9 = {
+  name9: "Eric",
+  sizes9: {
+    height9: 182,
+    width9: 50
+  }
+};
+
+let clone9 = structuredClone(user9);
+
+console.log( user9.sizes9 === clone9.sizes9 );
+
+user9.sizes9.width9 = 60; 
+console.log(clone9.sizes9.width9);
+
+let user10 = {};
+user10.me10 = user10;
+
+let clone10 = structuredClone(user10);
+console.log(clone10.me10 === clone10);
+
+
