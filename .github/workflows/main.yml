@@ -1,4 +1,3 @@
-//Object references and copying
 let message = "Hello!";
 let phrase = message;
 console.log(message);
@@ -43,15 +42,14 @@ for (let key in user3) {
 clone.name3 = "Miguel";
 console.log(user3.name3);
 
-
 let user4 = { name4: "Mike" };
 let permissions1 = { canView: true };
 let permissions2 = { canEdit: true };
-Object.assign(user, permissions1, permissions2);
+Object.assign(user4, permissions1, permissions2);
 
 console.log(user4.name4);
-console.log(user4.canView4);
-console.log(user4.canEdit4);
+console.log(user4.canView);
+console.log(user4.canEdit);
 
 let user5 = { name5: "Michael" };
 Object.assign(user5, { name5: "Juan" });
@@ -75,7 +73,7 @@ let user7 = {
   }
 };
 
-console.log( user7.sizes7.height7 );
+console.log(user7.sizes7.height7);
 
 let user8 = {
   name8: "Mike",
@@ -87,9 +85,9 @@ let user8 = {
 
 let clone8 = Object.assign({}, user8);
 
-console.log( user8.sizes8 === clone8.sizes8 );
+console.log(user8.sizes8 === clone8.sizes8);
 
-user8.sizes8.width8 = 60; 
+user8.sizes8.width8 = 60;
 console.log(clone8.sizes8.width8);
 
 let user9 = {
@@ -99,12 +97,12 @@ let user9 = {
     width9: 50
   }
 };
-
+// Assume structuredClone is a valid function for deep cloning
 let clone9 = structuredClone(user9);
 
-console.log( user9.sizes9 === clone9.sizes9 );
+console.log(user9.sizes9 === clone9.sizes9);
 
-user9.sizes9.width9 = 60; 
+user9.sizes9.width9 = 60;
 console.log(clone9.sizes9.width9);
 
 let user10 = {};
@@ -112,5 +110,3 @@ user10.me10 = user10;
 
 let clone10 = structuredClone(user10);
 console.log(clone10.me10 === clone10);
-
-
